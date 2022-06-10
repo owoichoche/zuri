@@ -1,0 +1,30 @@
+import random
+
+while True:
+    user_action = input("Enter a choice (R for rock, P for paper or S scissors): ")
+    possible_options = ["R", "P", "S"]
+
+    cpu_player = random.choice(possible_options)
+    print(f"\nYou chose {user_action}, computer chose {cpu_player}.\n")
+
+    if user_action == cpu_player:
+        print(f"It's a tie. You both selected {user_action}.")
+    elif user_action == "rock":
+        if cpu_player == "scissors":
+            print("Rock smashes scissors! You win!")
+        else:
+            print("Paper covers rock! You lose.")
+    elif user_action == "paper":
+        if cpu_player == "rock":
+            print("Paper covers rock! You win!")
+        else:
+            print("Scissors cuts paper! You lose.")
+    elif user_action == "scissors":
+        if cpu_player == "paper":
+            print("Scissors cuts paper! You win!")
+        else:
+            print("Rock smashes scissors! You lose.")
+
+    play_again = input("Play again? (y/n): ")
+    if play_again.lower() != "y":
+        break
